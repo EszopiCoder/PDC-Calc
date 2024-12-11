@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <title>PDC Calc</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="calc.js"></script>
+  </head>
+  <body>
+    <h1>Proportion of Days Covered (PDC) Calculator</h1>
+    <p>Open source and web-based (<a href="https://github.com/EszopiCoder/PDC-Calc/" target="_blank">GitHub</a>)</p>
+    <hr>
+    <form>
+      <div>
+        <label for="doseInterval">Dosing Interval:</label>
+        <select id="doseInterval" name="doseInterval" onchange="onchangeRoute()">
+          <option value="1">Day</option>
+          <option value="28">Month (28 days)</option>
+          <option value="56">2 months (56 days)</option>
+          <option value="84">3 months (84 days)</option>
+        </select>
+      </div>
+      <div>
+        <label for="qtyRemaining">Quantity Remaining:</label>
+        <input type="number" id="qtyRemaining" name="qtyRemaining" min="0" step="1" value="0" onchange="clearResult()">
+      </div>
+      <div>
+        <label for="qtyFilled">Quantity Last Filled:</label>
+        <input type="number" id="qtyFilled" name="qtyFilled" min="1" step="1" value="1" onchange="calcDaysSupply()">
+      </div>
+      <div>
+        <label for="numDoses" id="lblNumDoses"></label>
+        <input type="number" id="numDoses" name="numDoses" min="0" step="1" value="1" onchange="calcDaysSupply()">
+      </div>
+      <div>
+        <label for="daysSupply">Days Supply:</label>
+        <span id="daysSupply"></span>
+      </div>
+      <input type="button" value="Calculate" onclick="calc()">
+    </form>
+    <hr>
+    <form>
+      <h2>Result:</h2>
+      <p id="output" class="result"></p>
+    </form>
+  </body>
+</html>
