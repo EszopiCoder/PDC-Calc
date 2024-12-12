@@ -9,7 +9,7 @@ window.onload = function() {
 function onchangeDoseInterval() {
   const doseInterval = document.getElementById('doseInterval');
   const lblNumDoses = document.getElementById('lblNumDoses');
-  lblNumDoses.innerHTML = 'Number of Doses <u>'+doseInterval.options[doseInterval.selectedIndex].text+'</u>';
+  lblNumDoses.innerHTML = 'Number of Doses per <u>'+doseInterval.options[doseInterval.selectedIndex].text+'</u>';
   calcDaysSupply();
 }
 
